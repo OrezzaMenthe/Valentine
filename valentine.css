@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffcad4;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+#hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('heart.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: floatUp 5s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.popup {
+    position: fixed;
+    font-family: Arial;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    text-align: center;
+    display: none;
+}
+
+.title {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    font-family: Arial Black;
+    color: #3B3B3B;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.card {
+    width: 95%;
+    position: absolute;
+    top: -10px;
+    transition: transform 1s ease-in-out;
+    
+}
+
+.envelope {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.buttons {
+    display: none;
+    position: absolute;
+    top: calc(70% + 0px);
+    transition: transform 1s ease-in-out;
+    width: 700px;
+    height: 190px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+.btn-yes {
+    background-color: #ac212c;
+    color: white;
+    position: absolute;
+    left: 35%;
+
+}
+
+.btn-no {
+    background-color: #3b3b3b;
+    color: white;
+    left: 55%;
+    position: absolute; /* Nécessaire pour qu'il puisse bouger */
+    transition: left 0.3s ease, top 0.3s ease; /* Animation fluide */
+}
+
+
+.refresh-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #3b3b3b;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.refresh-btn:hover {
+    opacity: 1;
+}
